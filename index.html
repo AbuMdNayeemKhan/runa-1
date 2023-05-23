@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #f00;
+}
+
+.form {
+  text-align: center;
+  margin-top: 50px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 5px #ccc;
+}
+
+button {
+  padding: 10px;
+  margin: 10px;
+  background-color: #f00;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #f00;
+}
+
+@media only screen and (max-width: 1000px) {
+  h1 {
+    font-size: 75px;
+  }
+  .wrapper{
+    display: flex;
+    flex-direction: column;
+  }
+  input{
+    font-size: 36px;
+  }
+  button{
+    font-size: 36px;
+  }
+  #result {
+    font-size: 55px;
+  }
+}
+</style>
+  <head>
+    <meta charset="UTF-8">
+    <title>Rujana</title>
+  </head>
+  <body>
+    <h1>Rujana</h1>
+    <div class="form">
+      <div class="wrapper">
+        <input type="text" id="name1" placeholder="ব্যাক্তির নাম ল্যাহো">
+        <input type="text" id="name2" placeholder="পার্টনারের নাম ল্যাহো">
+        <button id="calculate">রেজাল্ট দ্যাখেন</button>
+      </div>
+      <div id="result"></div>
+    </div>
+    <script>
+    const calculateButton = document.getElementById("calculate");
+const resultDiv = document.getElementById("result");
+
+calculateButton.addEventListener("click", () => {
+  const name1 = document.getElementById("name1").value.trim();
+  const name2 = document.getElementById("name2").value.trim();
+  const loveScore = Math.floor(Math.random() * 101);
+  
+  if (name1 === "" || name2 === "") {
+    resultDiv.innerText = "Please enter both names";
+  } else {
+    resultDiv.innerText = `${name1} ${name2}কে ${loveScore}% ভালোপায়`;
+  }
+});
+    </script>
+  </body>
+</html>
